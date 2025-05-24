@@ -1,0 +1,501 @@
+/* TransferPage.css */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@500;700;800;900&display=swap');
+
+/* General Body Styling - Vibrant & Engaging Background */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Inter', sans-serif; /* Poppins for headings, Inter for body text */
+    background: linear-gradient(135deg, #ff6bcb 0%, #7366ff 100%); /* Vibrant Pink to Purple gradient */
+    color: #2c2c2c; /* Dark text for readability */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px; /* Slightly more padding */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main Container for the entire page content - Semi-transparent & Frosted */
+.transfer-page {
+    width: 100%;
+    max-width: 1050px; /* Slightly wider for a grander feel */
+    background: rgba(255, 255, 255, 0.98); /* More opaque for crispness */
+    backdrop-filter: blur(20px) saturate(180%); /* Stronger blur and saturation for frosted effect */
+    border-radius: 35px; /* Even more rounded corners */
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.35); /* Deeper, softer shadow */
+    padding: 60px; /* Increased padding for spaciousness */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 55px; /* More space between sections */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* More prominent border */
+    animation: fadeInScale 0.8s ease-out forwards; /* Fade in and slightly scale up */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Title Styling - Bold & Themed */
+.title {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for titles */
+    font-size: 52px; /* Larger title */
+    font-weight: 900; /* Extra extra bold */
+    text-align: center;
+    color: #4a0080; /* Deep purple for a rich feel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Increased gap */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25); /* More pronounced text shadow */
+    letter-spacing: 1.5px; /* More prominent letter spacing */
+    background: linear-gradient(45deg, #8a2be2, #a020f0); /* Purple gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title .emoji {
+    font-size: 70px; /* Larger emoji */
+    animation: bounce 1.2s infinite alternate ease-in-out; /* Smoother bounce */
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Form Section Styling - Contrasting but Cohesive */
+.transfer-form-section {
+    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); /* Light aqua gradient */
+    padding: 50px; /* More padding */
+    border-radius: 30px; /* More rounded corners */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Frosted border */
+    animation: slideInLeft 0.7s ease-out forwards; /* Slide in from left */
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.transfer-form-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px; /* Larger heading */
+    color: #00796b; /* Dark teal for heading */
+    text-align: center;
+    margin-bottom: 40px; /* More margin */
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.transfer-form-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Underline width */
+    height: 6px; /* Thicker underline */
+    background: linear-gradient(to right, #00bcd4, #00e5ff); /* Bright blue gradient */
+    border-radius: 3px;
+}
+
+/* Form Styling */
+.transfer-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted min width */
+    gap: 30px; /* Increased gap */
+}
+
+.form-group label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800; /* Extra bold */
+    font-size: 19px; /* Larger label font size */
+    margin-bottom: 15px; /* More space below label */
+    color: #34495e; /* Dark blue-grey for labels */
+    text-transform: uppercase; /* Uppercase for labels */
+    letter-spacing: 0.8px;
+}
+
+.transfer-form input,
+.transfer-form select {
+    padding: 18px 22px; /* More padding */
+    font-size: 18px; /* Larger input/select font size */
+    border-radius: 15px; /* More rounded */
+    border: 2px solid #a7d9f7; /* Softer blue border */
+    background-color: #fcfdff; /* Very light background */
+    transition: all 0.4s ease; /* Slower transition */
+    box-sizing: border-box;
+    color: #333;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.08); /* More noticeable inner shadow */
+}
+
+.transfer-form input:focus,
+.transfer-form select:focus {
+    border-color: #6f4eff; /* Vibrant purple focus */
+    box-shadow: 0 0 0 6px rgba(111, 78, 255, 0.3), inset 0 3px 8px rgba(0, 0, 0, 0.15); /* More visible focus shadow */
+    background-color: #ffffff; /* Keep white on focus */
+}
+
+/* Transfer Button */
+.transfer-button {
+    grid-column: 1 / -1;
+    padding: 22px 40px; /* Even more padding */
+    font-size: 24px; /* Larger font */
+    background: linear-gradient(45deg, #8a2be2 0%, #a020f0 100%); /* Purple gradient */
+    color: #fff;
+    border: none;
+    border-radius: 18px; /* More rounded */
+    font-weight: 800; /* Extra bold */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4); /* Stronger shadow */
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25); /* More prominent text shadow */
+}
+
+.transfer-button:hover {
+    background: linear-gradient(45deg, #a020f0 0%, #8a2be2 100%); /* Inverted gradient on hover */
+    transform: translateY(-5px) scale(1.02); /* More pronounced lift and slight scale */
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.6); /* Even stronger shadow on hover */
+}
+
+.transfer-button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+    background: #8a2be2; /* Solid purple on active */
+}
+
+/* History Section */
+.history-section {
+    background: linear-gradient(135deg, #f0fcfc 0%, #e0f7fa 100%); /* Light teal gradient */
+    padding: 40px; /* Adjusted padding for a balanced look */
+    border-radius: 30px; /* More rounded */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Frosted border */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    animation: slideInRight 0.7s ease-out forwards; /* Slide in from right */
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.history-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px; /* Larger heading */
+    color: #00796b; /* Dark teal for heading */
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.history-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px; /* Wider underline */
+    height: 6px; /* Thicker underline */
+    background: linear-gradient(to right, #4ECDC4, #1abc9c); /* Teal gradient */
+    border-radius: 3px;
+}
+
+.history-section h2 .emoji {
+    font-size: 48px; /* Larger emoji */
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-item {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); /* Soft pink gradient */
+    padding: 25px 35px; /* More padding */
+    border-radius: 20px; /* More rounded */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Frosted border */
+    margin-bottom: 20px; /* More space between items */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Increased gap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    position: relative;
+    overflow: hidden;
+}
+
+.history-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px; /* Thicker accent border */
+    height: 100%;
+    background: linear-gradient(to bottom, #FF6B6B, #FF9800); /* Orange-red gradient accent */
+    border-radius: 20px 0 0 20px; /* Only top-left and bottom-left rounded */
+}
+
+.history-item:hover {
+    transform: translateY(-6px); /* More pronounced lift */
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25); /* Even stronger shadow on hover */
+    background: linear-gradient(135deg, #f8bbd0 0%, #fce4ec 100%); /* Inverted gradient on hover */
+}
+
+.history-item strong {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900; /* Extra extra bold */
+    color: #34495e; /* Very dark blue for strong visibility */
+    font-size: 22px; /* Larger font size for emphasis */
+    display: block;
+    margin-bottom: 10px; /* More space below */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.history-item .transfer-details {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap */
+    font-size: 17px; /* Slightly larger font */
+    color: #4a4a4a; /* Darker grey for better contrast */
+    font-weight: 600; /* Semi-bold weight */
+}
+
+.history-item .transfer-details .arrow {
+    font-size: 26px; /* Larger arrow */
+    color: #ff5a5a; /* Bright red for the arrow */
+    font-weight: bold;
+}
+
+.history-item .timestamp {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; /* Slightly larger timestamp */
+    color: #666; /* Medium grey for timestamp */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Increased gap */
+    margin-top: 8px; /* Space above timestamp */
+    font-weight: 500;
+}
+
+/* No Transfers Placeholder */
+.no-transfers {
+    text-align: center;
+    padding: 30px; /* More padding */
+    font-size: 17px; /* Larger font */
+    color: #777; /* Medium grey */
+    background: #e6f7f2; /* Light mint green */
+    border-radius: 15px; /* More rounded */
+    border: 2px dashed #a0d6c6; /* Thicker dashed border */
+    font-style: italic;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.08); /* More noticeable inner shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .transfer-page {
+        max-width: 90%;
+        padding: 50px;
+        gap: 45px;
+    }
+
+    .transfer-form-section,
+    .history-section {
+        padding: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .transfer-page {
+        padding: 40px;
+        border-radius: 30px;
+        gap: 35px;
+    }
+
+    .title {
+        font-size: 44px;
+        gap: 18px;
+    }
+
+    .title .emoji {
+        font-size: 60px;
+    }
+
+    .transfer-form-section,
+    .history-section {
+        padding: 40px;
+        border-radius: 25px;
+    }
+
+    .transfer-form-section h2,
+    .history-section h2 {
+        font-size: 34px;
+        margin-bottom: 35px;
+    }
+
+    .history-section h2 .emoji {
+        font-size: 45px;
+    }
+
+    .transfer-form {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .form-group label {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .transfer-form input,
+    .transfer-form select {
+        font-size: 18px;
+        padding: 16px 20px;
+    }
+
+    .transfer-button {
+        font-size: 22px;
+        padding: 20px 35px;
+        margin-top: 25px;
+    }
+
+    .history-item {
+        padding: 22px 30px;
+        font-size: 16px;
+        margin-bottom: 18px;
+        gap: 10px;
+    }
+    .history-item strong {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    .history-item .transfer-details {
+        font-size: 16px;
+        gap: 12px;
+    }
+    .history-item .transfer-details .arrow {
+        font-size: 22px;
+    }
+    .history-item .timestamp {
+        font-size: 14px;
+        gap: 8px;
+    }
+    .no-transfers {
+        padding: 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    .transfer-page {
+        padding: 30px;
+        border-radius: 25px;
+        gap: 25px;
+    }
+
+    .title {
+        font-size: 38px;
+        gap: 15px;
+    }
+
+    .title .emoji {
+        font-size: 50px;
+    }
+
+    .transfer-form-section,
+    .history-section {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .transfer-form-section h2,
+    .history-section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .history-section h2 .emoji {
+        font-size: 38px;
+    }
+
+    .form-group label {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .transfer-form input,
+    .transfer-form select {
+        font-size: 17px;
+        padding: 14px 18px;
+    }
+
+    .transfer-button {
+        font-size: 18px;
+        padding: 16px 28px;
+        margin-top: 20px;
+    }
+
+    .history-item {
+        padding: 18px 22px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        gap: 8px;
+    }
+    .history-item strong {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    .history-item .transfer-details {
+        font-size: 14px;
+        gap: 10px;
+    }
+    .history-item .transfer-details .arrow {
+        font-size: 20px;
+    }
+    .history-item .timestamp {
+        font-size: 13px;
+        gap: 8px;
+    }
+    .no-transfers {
+        padding: 25px;
+        font-size: 15px;
+    }
+}

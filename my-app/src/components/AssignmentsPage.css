@@ -1,0 +1,361 @@
+/* AssignmentsPage.css */
+
+/* General Body Styling - A slightly different, yet harmonious gradient */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Using Roboto for a slightly different feel */
+    background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%); /* Soft blue gradient */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer content */
+    padding: 40px 20px; /* More padding top/bottom */
+    box-sizing: border-box;
+}
+
+/* Main Page Container */
+.assignments-page { /* <--- UPDATED CLASS NAME */
+    width: 100%;
+    max-width: 1100px; /* Wider for more content */
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* Stronger frosted glass effect */
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 45px; /* More space between main sections */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 3.5rem; /* Large and prominent */
+    color: #1a237e; /* Darker blue */
+    margin-bottom: 30px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.page-title .emoji {
+    font-size: 4.5rem;
+    color: #42a5f5; /* Lighter blue accent */
+}
+
+/* Section Styling (Assign & Expend) */
+.assignment-section,
+.expenditure-section {
+    background-color: #f7fafd; /* Very light blue background for sections */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft section shadow */
+    border: 1px solid #e0f2f7;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #283593; /* Darker blue for section titles */
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.section-title .emoji {
+    font-size: 3rem;
+    color: #64b5f6;
+}
+
+.sub-section-title {
+    font-size: 1.8rem;
+    color: #42a5f5;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Form Styling */
+.asset-form {
+    margin-bottom: 40px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Spacing between form groups */
+    margin-bottom: 30px; /* Space before button */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width { /* For textarea spanning full width */
+    grid-column: 1 / -1;
+}
+
+.asset-form label {
+    font-weight: 600;
+    color: #4a6285; /* Medium blue-grey for labels */
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.asset-form input[type="text"],
+.asset-form input[type="number"],
+.asset-form input[type="date"],
+.asset-form select,
+.asset-form textarea {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid #bbdefb; /* Light blue border */
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.asset-form input[type="text"]:focus,
+.asset-form input[type="number"]:focus,
+.asset-form input[type="date"]:focus,
+.asset-form select:focus,
+.asset-form textarea:focus {
+    outline: none;
+    border-color: #2196f3; /* Stronger blue on focus */
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.25);
+}
+
+.asset-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 80px;
+}
+
+/* Submit Button */
+.submit-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto; /* Center button */
+    padding: 15px 35px;
+    background-color: #4caf50; /* Green for positive action */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.submit-button:hover {
+    background-color: #388e3c;
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 12px 25px rgba(76, 175, 80, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.submit-button.delete-button { /* Distinct style for delete/expend action */
+    background-color: #f44336; /* Red for destructive action */
+    box-shadow: 0 8px 20px rgba(244, 67, 54, 0.3);
+}
+
+.submit-button.delete-button:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 12px 25px rgba(244, 67, 54, 0.4);
+}
+
+/* Table Styling */
+.assignments-table-container,
+.expenditures-table-container {
+    overflow-x: auto; /* Allow horizontal scroll on small screens */
+    margin-top: 30px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Ensures rounded corners */
+}
+
+.data-table th,
+.data-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e3f2fd; /* Light blue border for rows */
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.data-table th {
+    background-color: #90caf9; /* Lighter blue header */
+    color: #1a237e; /* Darker blue text for header */
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table th:first-child { border-top-left-radius: 15px; }
+.data-table th:last-child { border-top-right-radius: 15px; }
+
+.data-table tr:last-child td:first-child { border-bottom-left-radius: 15px; }
+.data-table tr:last-child td:last-child { border-bottom-right-radius: 15px; }
+
+
+.data-table tbody tr:hover {
+    background-color: #e3f2fd; /* Very light blue on hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Empty State Message */
+.empty-state {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 25px;
+    background-color: #f0f4f8;
+    border-radius: 12px;
+    border: 1px dashed #c0d9eb;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .assignments-page { /* <--- UPDATED CLASS NAME */
+        padding: 40px;
+        border-radius: 20px;
+        gap: 35px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        gap: 15px;
+    }
+
+    .page-title .emoji {
+        font-size: 3.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        gap: 12px;
+    }
+
+    .section-title .emoji {
+        font-size: 2.5rem;
+    }
+
+    .assignment-section,
+    .expenditure-section {
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 20px;
+    }
+
+    .submit-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+    .assignments-page { /* <--- UPDATED CLASS NAME */
+        padding: 25px;
+        border-radius: 18px;
+        gap: 25px;
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+        flex-direction: column; /* Stack emoji and text */
+        gap: 10px;
+    }
+
+    .page-title .emoji {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-title .emoji {
+        font-size: 2.2rem;
+    }
+
+    .sub-section-title {
+        font-size: 1.5rem;
+    }
+
+    .assignment-section,
+    .expenditure-section {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .asset-form input,
+    .asset-form select,
+    .asset-form textarea {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    .submit-button {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+
+    .data-table th,
+    .data-table td {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+    }
+}
+
+/* Specific adjustments for textarea on small screens if needed */
+@media (max-width: 600px) {
+    .form-group.full-width textarea {
+        min-height: 60px; /* Adjust min-height for smaller screens */
+    }
+}

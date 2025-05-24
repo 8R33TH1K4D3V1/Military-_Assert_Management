@@ -1,0 +1,387 @@
+/* PurchasesPage.css - More Attractive & Colorful */
+
+/* General Body Styling - Lively Gradient Background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Modern and friendly font */
+    background: linear-gradient(135deg, #FF9A8B 0%, #FF6A88 50%, #FF99AC 100%); /* Warm, inviting gradient */
+    color: #333; /* Darker text for readability */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* More generous padding */
+    box-sizing: border-box;
+}
+
+/* Main Container - Elevated and Visually Soft */
+.purchases-page {
+    width: 100%;
+    max-width: 1000px; /* Slightly wider for more content space */
+    margin: 2rem auto; /* Adjusted for centering with flexbox body */
+    padding: 40px; /* Increased padding */
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white for depth */
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    border-radius: 20px; /* More pronounced rounded corners */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); /* Stronger, softer shadow */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Spacing between main sections */
+}
+
+/* Page Title - Bold & Engaging */
+.purchases-page h1 {
+    text-align: center;
+    color: #4A0033; /* Deep, rich purple-red */
+    margin-bottom: 25px; /* More space below the title */
+    font-size: 3.2rem; /* Larger, more impactful title */
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.purchases-page h1 .icon {
+    font-size: 3.8rem; /* Larger icon */
+    color: #FF6A88; /* Accent color for the icon */
+}
+
+/* Form Section - Clean and Structured */
+.purchase-form fieldset {
+    border: none; /* Remove default fieldset border */
+    border-radius: 15px;
+    padding: 30px 35px; /* More padding */
+    background: #FFF0F5; /* Light pink background for the form section */
+    margin-bottom: 2.5rem; /* Increased margin */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+}
+
+.purchase-form legend {
+    font-weight: 700;
+    font-size: 1.8rem; /* Larger legend */
+    color: #880E4F; /* Deep pink for legend */
+    margin-bottom: 1.5rem; /* More space below legend */
+    padding: 0 10px; /* Add some padding to legend */
+    text-align: center; /* Center legend */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for inputs */
+    gap: 20px; /* Spacing between grid items */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-form label {
+    display: block;
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: 600;
+    color: #5C003D; /* Darker pink for labels */
+    font-size: 1.05rem;
+}
+
+.purchase-form input[type="text"],
+.purchase-form input[type="number"],
+.purchase-form input[type="date"],
+.purchase-form select {
+    width: 100%;
+    padding: 12px 15px; /* More padding */
+    border: 1px solid #FFC0CB; /* Light pink border */
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 1.05rem;
+    color: #333;
+    background-color: #FFFFFF; /* White background for inputs */
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.purchase-form input[type="text"]:focus,
+.purchase-form input[type="number"]:focus,
+.purchase-form input[type="date"]:focus,
+.purchase-form select:focus {
+    outline: none;
+    border-color: #E91E63; /* Vibrant pink focus border */
+    box-shadow: 0 0 0 4px rgba(233, 30, 99, 0.2); /* Soft, vibrant focus shadow */
+}
+
+/* Primary Button - Bold and Action-Oriented */
+.btn-primary {
+    display: block; /* Make button full width */
+    width: fit-content; /* Fit content for centering */
+    margin: 30px auto 0; /* Center button and add top margin */
+    padding: 14px 30px; /* More padding */
+    background-color: #E91E63; /* Vibrant pink for primary action */
+    border: none;
+    border-radius: 10px; /* More rounded */
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.15rem; /* Larger font */
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3); /* Stronger shadow */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #C2185B; /* Darker pink on hover */
+    transform: translateY(-3px) scale(1.01); /* Lift and slight scale effect */
+    box-shadow: 0 12px 25px rgba(233, 30, 99, 0.4); /* Enhanced shadow on hover */
+    outline: none;
+}
+
+.btn-primary:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+}
+
+/* Filters Section - Distinct and Functional */
+.filters {
+    margin-bottom: 2.5rem; /* More space below filters */
+    background: #FFE0E6; /* Lighter pink background for filters */
+    padding: 25px 30px; /* More padding */
+    border-radius: 15px;
+    border: 1px solid #FFB6C1; /* Matching light pink border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+}
+
+.filters h2 {
+    color: #880E4F; /* Deep pink for filter title */
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5C003D;
+    font-size: 1.05rem;
+}
+
+.filters input[type="date"],
+.filters select {
+    width: 100%; /* Full width within grid cell */
+    padding: 10px 15px; /* Consistent padding */
+    border-radius: 8px;
+    border: 1px solid #FFC0CB;
+    font-size: 1.05rem;
+    background-color: #FFFFFF;
+    color: #333;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.filters input[type="date"]:focus,
+.filters select:focus {
+    outline: none;
+    border-color: #E91E63;
+    box-shadow: 0 0 0 4px rgba(233, 30, 99, 0.2);
+}
+
+/* Purchases List & Table - Clean and Readable */
+.purchases-list h2 {
+    color: #4A0033; /* Deep purple-red for list title */
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.purchases-list h2 .icon {
+    font-size: 2.6rem;
+    color: #FF6A88;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* Use separate for rounded corners on table */
+    border-spacing: 0;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for table */
+    border-radius: 15px; /* Rounded corners for the entire table */
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+th,
+td {
+    padding: 1rem 1.2rem; /* More padding */
+    text-align: left;
+    border-bottom: 1px solid #ffe8f0; /* Lighter, themed border */
+    font-size: 1rem;
+    color: #444; /* Slightly softer text color */
+}
+
+th {
+    background-color: #FFB6C1; /* Light pink header */
+    color: #4A0033; /* Darker text for header */
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: uppercase; /* Uppercase for header text */
+    letter-spacing: 0.5px;
+}
+
+/* Specific rounded corners for header cells */
+th:first-child {
+    border-top-left-radius: 15px;
+}
+th:last-child {
+    border-top-right-radius: 15px;
+}
+
+/* Specific rounded corners for last row cells */
+tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+
+tbody tr:hover {
+    background-color: #FFF0F5; /* Light pink on row hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Empty State Message (Optional) */
+.no-purchases-message {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+    background-color: #fcebeb;
+    border-radius: 10px;
+    border: 1px dashed #ffb6c1;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .purchases-page {
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .purchases-page h1 {
+        font-size: 2.5rem;
+        gap: 10px;
+    }
+
+    .purchases-page h1 .icon {
+        font-size: 3rem;
+    }
+
+    .purchase-form fieldset,
+    .filters {
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .purchase-form legend,
+    .filters h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-grid,
+    .filter-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 15px;
+    }
+
+    .purchase-form input,
+    .purchase-form select,
+    .filters input,
+    .filters select {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    .purchases-list h2 {
+        font-size: 1.8rem;
+    }
+
+    .purchases-list h2 .icon {
+        font-size: 2.2rem;
+    }
+
+    th,
+    td {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .purchases-page {
+        padding: 20px;
+    }
+
+    .purchases-page h1 {
+        font-size: 2rem;
+    }
+
+    .purchases-page h1 .icon {
+        font-size: 2.5rem;
+    }
+
+    .purchase-form fieldset,
+    .filters {
+        padding: 20px;
+    }
+
+    .purchase-form legend,
+    .filters h2 {
+        font-size: 1.3rem;
+    }
+
+    .btn-primary {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+
+    .purchases-list h2 {
+        font-size: 1.5rem;
+    }
+
+    .purchases-list h2 .icon {
+        font-size: 1.8rem;
+    }
+
+    th,
+    td {
+        font-size: 0.85rem;
+        padding: 0.7rem 0.8rem;
+    }
+}

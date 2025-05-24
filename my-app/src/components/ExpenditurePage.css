@@ -1,0 +1,435 @@
+/* ExpenditurePage.css */
+
+/* General Body Styling (can be shared across pages or defined globally) */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* A bold and modern font */
+    background: linear-gradient(135deg, #84CEEB 0%, #56CCF2 50%, #2980B9 100%); /* Vibrant blue gradient */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Main Page Container for Expenditure Page */
+.expenditure-page {
+    width: 100%;
+    max-width: 1250px; /* Even wider for grandeur */
+    background: rgba(255, 255, 255, 0.98); /* Near opaque for crispness */
+    backdrop-filter: blur(25px) saturate(200%); /* Stronger blur and saturation */
+    border-radius: 35px; /* Even softer, larger border-radius */
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.3); /* More dramatic shadow */
+    padding: 70px; /* Increased padding for spaciousness */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Increased gap for clear separation */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* More defined border */
+    transform: translateY(0);
+    animation: fadeInSlideUp 0.8s ease-out forwards; /* Smoother entry animation */
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 4.8rem; /* Larger, more impactful title */
+    color: #1a237e; /* Deep blue */
+    margin-bottom: 40px;
+    font-weight: 900;
+    letter-spacing: 3px; /* More spacing for elegance */
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Deeper text shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Larger gap for visual punch */
+    background: linear-gradient(90deg, #FF6B6B 0%, #FFA07A 100%); /* Warm, inviting gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes text inherit gradient */
+}
+
+.page-title .emoji {
+    font-size: 6rem; /* Huge, eye-catching emoji */
+    color: #FFD700; /* Gold color for star/money emoji */
+    animation: pulse 1.5s infinite alternate; /* Pulsing animation for emoji */
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Section Styling for Expenditure */
+.expenditure-section {
+    background: linear-gradient(180deg, #fbfcfd 0%, #f0f4f8 100%); /* Subtle gradient for sections */
+    padding: 50px; /* More padding */
+    border-radius: 30px; /* Softer corners */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15); /* More depth */
+    border: 2px solid #e0f7fa;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+}
+
+.expenditure-section:hover {
+    transform: translateY(-8px) rotateZ(0.5deg); /* More dynamic lift and slight tilt */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.section-title {
+    font-size: 3.2rem; /* Larger section title */
+    color: #283593; /* Deep blue */
+    margin-bottom: 45px; /* More space */
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px; /* Larger gap */
+    background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%); /* Green gradient for titles */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-title .emoji {
+    font-size: 4rem; /* Larger emoji */
+    color: #FFC107; /* Amber color for section emojis */
+}
+
+.sub-section-title {
+    font-size: 2.2rem; /* Larger sub-section title */
+    color: #42a5f5; /* Bright blue */
+    margin-top: 50px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Form Styling */
+.asset-form {
+    margin-bottom: 50px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider min column size */
+    gap: 35px; /* More space between form fields */
+    margin-bottom: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.asset-form label {
+    font-weight: 700;
+    color: #3f51b5; /* Deeper blue for labels */
+    margin-bottom: 15px; /* More space */
+    font-size: 1.15rem; /* Slightly larger label text */
+    text-transform: uppercase; /* Make labels stand out */
+    letter-spacing: 0.5px;
+}
+
+.asset-form input[type="date"],
+.asset-form select,
+.asset-form textarea {
+    width: 100%;
+    padding: 16px 22px; /* Increased padding */
+    border: 3px solid #bbdefb; /* Thicker border */
+    border-radius: 15px; /* Softer radius */
+    font-size: 1.1rem; /* Slightly larger text */
+    color: #333;
+    background-color: #ffffff;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-sizing: border-box;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Stronger inner shadow */
+}
+
+.asset-form input[type="date"]:focus,
+.asset-form select:focus,
+.asset-form textarea:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 6px rgba(33, 150, 243, 0.4), inset 0 2px 5px rgba(0, 0, 0, 0.2); /* More prominent focus shadow */
+    background-color: #e3f2fd; /* Light blue background on focus */
+    transform: scale(1.01); /* Subtle grow on focus */
+}
+
+.asset-form textarea {
+    resize: vertical;
+    min-height: 120px; /* Taller text area */
+}
+
+/* Submit Button */
+.submit-button {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 18px 45px; /* Larger padding */
+    background: linear-gradient(45deg, #00C853 0%, #64DD17 100%); /* Bright green gradient */
+    color: white;
+    border: none;
+    border-radius: 15px; /* Softer radius */
+    font-size: 1.25rem; /* Larger font */
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 15px 30px rgba(0, 200, 83, 0.5); /* Stronger shadow */
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Ensure pseudo-element is behind text */
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* White overlay for shimmer */
+    transform: translateX(-100%) skewX(-30deg); /* Skewed for dynamic effect */
+    transition: transform 0.5s ease-out;
+    z-index: -1;
+}
+
+.submit-button:hover::before {
+    transform: translateX(100%) skewX(-30deg);
+}
+
+.submit-button:hover {
+    background: linear-gradient(45deg, #00E676 0%, #76FF03 100%); /* Even brighter green on hover */
+    transform: translateY(-8px) scale(1.03) rotateZ(-1deg); /* More dynamic hover */
+    box-shadow: 0 20px 40px rgba(0, 200, 83, 0.6);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+    background: linear-gradient(45deg, #00B060 0%, #4CAF50 100%); /* Slightly darker on click */
+}
+
+.submit-button.delete-button {
+    background: linear-gradient(45deg, #FF1744 0%, #FF5252 100%); /* Bright red gradient */
+    box-shadow: 0 15px 30px rgba(255, 23, 68, 0.5);
+}
+
+.submit-button.delete-button:hover {
+    background: linear-gradient(45deg, #D50000 0%, #FF1744 100%); /* Darker red on hover */
+    box-shadow: 0 20px 40px rgba(255, 23, 68, 0.6);
+}
+
+.submit-button.delete-button:active {
+    background: linear-gradient(45deg, #C50000 0%, #D50000 100%);
+}
+
+/* Table Styling */
+.expenditures-table-container {
+    overflow-x: auto;
+    margin-top: 40px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+    border-radius: 25px; /* Softer radius */
+    overflow: hidden;
+    animation: slideInLeft 0.9s ease-out forwards; /* Table entry animation */
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.data-table th,
+.data-table td {
+    padding: 20px 30px; /* More padding */
+    text-align: left;
+    border-bottom: 1px solid #e1f5fe; /* Lighter border */
+    font-size: 1.05rem; /* Slightly larger font */
+    color: #444;
+}
+
+.data-table th {
+    background: linear-gradient(90deg, #64B5F6 0%, #42A5F5 100%); /* Vibrant blue gradient for header */
+    color: #1a237e; /* Deep blue text on header */
+    font-weight: 800;
+    font-size: 1.15rem; /* Larger header font */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.data-table th:first-child { border-top-left-radius: 25px; }
+.data-table th:last-child { border-top-right-radius: 25px; }
+
+.data-table tr:last-child td:first-child { border-bottom-left-radius: 25px; }
+.data-table tr:last-child td:last-child { border-bottom-right-radius: 25px; }
+
+.data-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.data-table tbody tr:hover {
+    background-color: #eaf8ff; /* Lighter, more vibrant blue on hover */
+    transform: scale(1.01); /* Subtle grow on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Light shadow on hover */
+}
+
+/* Empty State Message */
+.empty-state {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 35px;
+    background-color: #f7fbff;
+    border-radius: 18px;
+    border: 3px dashed #a7d9f7; /* More distinct dashed border with vibrant blue */
+    margin-top: 30px;
+    font-size: 1.3rem; /* Larger font */
+    animation: bounceIn 1s ease-out forwards; /* Fun entry animation */
+}
+
+/* Responsive Adjustments (adjusted for new sizes and animations) */
+@media (max-width: 992px) {
+    .expenditure-page {
+        padding: 50px;
+        border-radius: 30px;
+        gap: 45px;
+    }
+
+    .page-title {
+        font-size: 3.8rem;
+        gap: 25px;
+    }
+
+    .page-title .emoji {
+        font-size: 5rem;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        gap: 20px;
+    }
+
+    .section-title .emoji {
+        font-size: 3.5rem;
+    }
+
+    .expenditure-section {
+        padding: 40px;
+        border-radius: 25px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .submit-button {
+        padding: 16px 40px;
+        font-size: 1.15rem;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 18px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+    .expenditure-page {
+        padding: 35px;
+        border-radius: 25px;
+        gap: 35px;
+    }
+
+    .page-title {
+        font-size: 2.8rem;
+        flex-direction: column;
+        gap: 15px;
+        letter-spacing: 2px;
+    }
+
+    .page-title .emoji {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 2.3rem;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .section-title .emoji {
+        font-size: 3rem;
+    }
+
+    .sub-section-title {
+        font-size: 1.8rem;
+        margin-top: 35px;
+        margin-bottom: 25px;
+    }
+
+    .expenditure-section {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .asset-form input,
+    .asset-form select,
+    .asset-form textarea {
+        font-size: 1rem;
+        padding: 14px 18px;
+    }
+
+    .submit-button {
+        font-size: 1.05rem;
+        padding: 14px 30px;
+    }
+
+    .data-table th,
+    .data-table td {
+        font-size: 0.9rem;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-group.full-width textarea {
+        min-height: 100px;
+    }
+}
